@@ -336,7 +336,7 @@ window.playerCode={
 		var player=State.active.variables.player;
 		player.money-=Math.max(0, State.active.variables.bribeAmount-player.bribeDiscount);
 		player.bribeDiscount=0;
-		State.active.variables.bribeAmount=window.playerCode.nextBribeAmount();
+		State.active.variables.bribeAmount=window.playerCode.nextBribeAmount( true );
 		State.active.variables.flags.bribePaid=true;
 	},
 	payBribePartial: function() {
@@ -346,7 +346,7 @@ window.playerCode={
 		player.money=0;
 		State.active.variables.flags.bribePaid=true;
 		State.active.variables.flags.bribeFail=true;
-		State.active.variables.bribeAmount=window.playerCode.nextBribeAmount();
+		State.active.variables.bribeAmount=window.playerCode.nextBribeAmount( true );
 	},
 	payBribeRefusal: function() {
 		var player=State.active.variables.player;
@@ -355,9 +355,20 @@ window.playerCode={
 		State.active.variables.flags.bribeFail=true;
 		State.active.variables.bribeAmount=window.playerCode.nextBribeAmount();
 	},
-	nextBribeAmount: function() {
+	nextBribeAmount: function( bribePaid ) {
 		var player=State.active.variables.player;
-		return Math.min(State.active.variables.bribeAmount + player.bribeIncrease, 200);
+		var money = player.money;
+		if ( ! bribePaid ) {
+			// Don't increase money; if discount is greater that amount
+			money-= Math.max(State.active.variables.bribeAmount - player.bribeDiscount , 0 );
+		}
+		if (player.bribeIncrease > 0) {
+			// bribeIncreae is set to 0; if the teacher promises not to increase
+           // the 2/ 1; can be configureed ratios of the teachers greed
+			return Math.max( State.active.variables.bribeAmount + player.bribeIncrease, Math.round( money * 2 / 1 ));
+		} else {
+			return State.active.variables.bribeAmount;
+		}
 	},
 	calculateBribeIncrease: function() {
 		var player=State.active.variables.player;
@@ -368,6 +379,7 @@ window.playerCode={
 		if (player.perversion.teacher < 7) { player.bribeIncrease = 20; return; }
 		
 		player.bribeIncrease = 30;
+		player.bribeIncrease = player.bribeIncrease * 2;
 	},
 	owns: function(item) {
 		return State.active.variables.inventory.indexOf(item.id) >= 0;

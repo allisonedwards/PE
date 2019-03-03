@@ -780,7 +780,7 @@
 		<<if ($player.money gte $bribeAmount-$player.bribeDiscount) and ((not $player.punishments.refusedToPay) or ($player.bribeDiscount gte $bribeAmount)) and (not $player.punishments.refusedToCrossdress)>>\
 			<<set $player.punishments.refusedToPay = false>>\
 			<<if (playerCode.nextBribeAmount() gt $bribeAmount)>>\
-				@@.teacher;"Thank you, $player.name. That was a bit easy, was it not? I think I will increase your weekly payment to $<<print playerCode.nextBribeAmount()>>. I am sure an enterprising boy like yourself won't find that too difficult."@@
+				@@.teacher;"Thank you, $player.name. That was a bit easy, was it not? <<if ( playerCode.nextBribeAmount() gt ($bribeAmount + $player.bribeIncrease))>> Judging by your fat wallet, <<endif>> I I think I will increase your weekly payment to $<<print playerCode.nextBribeAmount()>>. I am sure an enterprising boy like yourself won't find that too difficult."@@
 				
 				@@.heroT;Fuck.@@
 				
