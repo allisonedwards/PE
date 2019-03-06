@@ -756,6 +756,7 @@ window.playerList={
 	batterySneakDay: 0,
 	bribeDiscount: 0,
 	bribeIncrease: 10,
+	bribeIncreaseMultiplier: 1,
 	friendLastVisit: 0,
 	clothes: [],
 	gameSkill: 0,

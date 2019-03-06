@@ -364,8 +364,16 @@ window.playerCode={
 		}
 		if (player.bribeIncrease > 0) {
 			// bribeIncreae is set to 0; if the teacher promises not to increase
-           // the 2/ 1; can be configureed ratios of the teachers greed
-			return Math.max( State.active.variables.bribeAmount + player.bribeIncrease, Math.round( money * 2 / 1 ));
+			//  The below looks scarier than it is. Our ideas are
+			//      - never to go over 4* wallet value
+			//      - increase multiplier with disobience; but it tails down
+			//      - never increase the base bribe value over 1200; as this
+			//        impossible to continually service
+			return Math.min(1200 , 
+						    Math.max( State.active.variables.bribeAmount + player.bribeIncrease, 
+									  Math.round( money * ( 4 -( 3 / player.bribeIncreaseMultiplier ) ))
+									)
+						   );
 		} else {
 			return State.active.variables.bribeAmount;
 		}
@@ -373,13 +381,22 @@ window.playerCode={
 	calculateBribeIncrease: function() {
 		var player=State.active.variables.player;
 		
-		if (player.perversion.teacher < 3) { player.bribeIncrease = 10; return; }
-		if (player.perversion.teacher < 5) { player.bribeIncrease = 15; return; }
-		if ((player.perversion.teacher == 5) && (player.perversion.teacherCooldown < 2)) { player.bribeIncrease = 0; return; }
-		if (player.perversion.teacher < 7) { player.bribeIncrease = 20; return; }
-		
-		player.bribeIncrease = 30;
-		player.bribeIncrease = player.bribeIncrease * 2;
+		if (player.perversion.teacher < 3) { player.bribeIncrease = 10; }
+		else if (player.perversion.teacher < 5) { player.bribeIncrease = 15;}
+		else if ((player.perversion.teacher == 5) && (player.perversion.teacherCooldown < 2)) { player.bribeIncrease = 0; }
+		else if (player.perversion.teacher < 7) { player.bribeIncrease = 20;  }
+		else {
+			player.bribeIncrease = 30;
+		}
+		player.bribeIncrease = player.bribeIncrease * player.bribeIncreaseMultiplier;
+	},
+	resetIncreaseMultiplier: function() {
+		var player=State.active.variables.player;
+		player.bribeIncreaseMultiplier = 1;
+	},
+	incrementIncreaseMultiplier: function() {
+		var player=State.active.variables.player;
+		player.bribeIncreaseMultiplier += 1;
 	},
 	owns: function(item) {
 		return State.active.variables.inventory.indexOf(item.id) >= 0;

@@ -17,6 +17,9 @@
 	<<set $player.room.jacket=1>>\
 	<<set $player.room.tie=1+random(2)>>\
 <<endif>>\
+<<if window.timeCode.isTuesday()>>\
+	<<set window.playerCode.resetIncreaseMultiplier()>>\
+<<endif>>\
 <<if $flags.buttplugLost>>\
 	@@.teacher;"Oh, $player.name, that was hilarious. I have not laughed like that for a very long time. Still, as much as I would like to see that expression on your face again, I need to confiscate this butt-plug. Word of advice - find a bigger one. A much bigger one."@@
 
@@ -639,7 +642,9 @@
 <!----><<if _deduction gt 0>>\
 <!--	-->@@.teacher;<<openQuote>>That makes it <<if $player.bribeDiscount gt 0>>another <<endif>> $<<print _deduction>> deducted from your Monday payment. Very good, <<print $player.name>>."@@ $teacher nods at you with approval.\
 <!----><<elseif $player.perversion.teacher lte 8>>\
-<!--	-->@@.teacher;<<openQuote>>Well, $player.name, that was a disappointing effort.<<if (not timeCode.isMonday()) and ($player.bribeDiscount+_deduction lt $bribeAmount)>> You'd better hope you have enough money for your Monday payment.<<endif>>"@@ $teacher eyes you with disapproval.\
+<!--	-->@@.teacher;<<openQuote>>Well, $player.name, that was a disappointing effort.<<if (not timeCode.isMonday()) and ($player.bribeDiscount+_deduction lt $bribeAmount)>> You'd better hope you have enough money for your Monday payment.\
+			<<set window.playerCode.incrementIncreaseMultiplier()>>\
+<<endif>>"@@ $teacher eyes you with disapproval.\
 <!----><<endif>>\
 \
 	<!--<tasks giving>-->\
@@ -780,8 +785,8 @@
 		<<if ($player.money gte $bribeAmount-$player.bribeDiscount) and ((not $player.punishments.refusedToPay) or ($player.bribeDiscount gte $bribeAmount)) and (not $player.punishments.refusedToCrossdress)>>\
 			<<set $player.punishments.refusedToPay = false>>\
 			<<if (playerCode.nextBribeAmount() gt $bribeAmount)>>\
-				@@.teacher;"Thank you, $player.name. That was a bit easy, was it not? <<if ( playerCode.nextBribeAmount() gt ($bribeAmount + $player.bribeIncrease))>> Judging by your fat wallet, <<endif>> I I think I will increase your weekly payment to $<<print playerCode.nextBribeAmount()>>. I am sure an enterprising boy like yourself won't find that too difficult."@@
-				
+				@@.teacher;"Thank you, $player.name. That was a bit easy, was it not? <<if $player.bribeIncreaseMultiplier gt 1>> Due to your poor performance, I <<endif>><<if ( playerCode.nextBribeAmount() gt ($bribeAmount + $player.bribeIncrease))>> will take your fat wallet into account, and <<endif>>  will increase your weekly payment to $<<print playerCode.nextBribeAmount()>>. I am sure an enterprising boy like yourself won't find that too difficult."@@
+				She gives you a meaningful look with a saccharine sweet smile.
 				@@.heroT;Fuck.@@
 				
 			<<else>>\
