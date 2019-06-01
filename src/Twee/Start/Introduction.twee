@@ -27,6 +27,9 @@
 	<<case 3>>\
 		<<set $flags.choreFactor to 1>>\
 		<<set $flags.bribeFactor to 1.5>>\
+	<<case 4>>\
+		<<set $flags.choreFactor to 1.5>>\
+		<<set $flags.bribeFactor to 2>>\
 	<<default>>\
 		<<set $flags.choreFactor to 1>>\
 		<<set $flags.bribeFactor to 1>>\
