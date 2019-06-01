@@ -410,7 +410,6 @@ window.playerCode={
 		if (player.perversion.teacher < 7) { player.bribeIncrease = 20*State.active.variables.flags.bribeFactor; return; }
 		
 		player.bribeIncrease = 30*State.active.variables.flags.bribeFactor;
-		player.bribeIncrease = player.bribeIncrease * player.bribeIncreaseMultiplier;
 	},
 	resetIncreaseMultiplier: function() {
 		var flags = State.active.variables.flags;
