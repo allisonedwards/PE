@@ -25,6 +25,8 @@ Your difficulty level cannot be changed later.
 <label><<radiobutton "$flags.difficulty" 3>>Hard</label>
 <label><<radiobutton "$flags.difficulty" 4>>Extremely Hard</label>
 
+<<checkbox "$flags.penaliseFailure" false true unchecked>> Add financial penalties for failing teacher tasks.
+
 Content related to specific fetishes can be set in-game using the therapist's survey or at any time via the settings menu.
 
 [[Introduction]]

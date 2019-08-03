@@ -416,7 +416,9 @@ window.playerCode={
 	},
 	incrementIncreaseMultiplier: function() {
 		var flags = State.active.variables.flags;
-		flags.bribeFactor += 1 ;
+		if ( flags.penaliseFailure ) {
+			flags.bribeFactor += 1 ;
+		}
 	},
 	owns: function(item) {
 		return State.active.variables.inventory.indexOf(item.id) >= 0;

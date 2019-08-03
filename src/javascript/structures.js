@@ -1283,6 +1283,7 @@ window.flagsList={
 	difficulty: 2,
 	choreFactor: 1,
 	bribeFactor: 1,
+	penaliseFailure: false,
 	metClothesClerk: false,
 	quizState: "none",
 	quiz: [0,0,0,0,0,0,0,0,0,0],

@@ -46,6 +46,8 @@ window.teacherCode={
 	},
 	addPenalty:	function (penalties) {
 		var player=State.active.variables.player;
+        window.playerCode.incrementIncreaseMultiplier();
+
 		if (penalties < player.punishments.penalty) {
 			player.punishments.penalty += penalties/player.punishments.penalty;
 		}

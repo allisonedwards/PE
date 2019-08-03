@@ -291,6 +291,7 @@
 				<<endif>>\
 			<<elseif window.timeCode.isMonday()>>\
 				<<set $player.punishments.refusedToCrossdress = true>>\
+				<<set window.playerCode.incrementIncreaseMultiplier()>>\
 				She looks at you, frowning. @@.teacher;"I thought I was clear that there would be consequences if you refuse to wear the female uniform."@@
 			<<endif>>\
 		<<elseif $flags.lockedWeekend and $flags.chastityAgree>>\
@@ -793,7 +794,7 @@
 <!--	-->@@.teacher;<<openQuote>>That makes it <<if $player.bribeDiscount gt 0>>another <<endif>> $<<print _deduction>> deducted from your Monday payment. Very good, <<print $player.name>>."@@ $teacher nods at you with approval.\
 <!----><<elseif $player.perversion.teacher lte 8>>\
 <!--	-->@@.teacher;<<openQuote>>Well, $player.name, that was a disappointing effort.<<if (not timeCode.isMonday()) and ($player.bribeDiscount+_deduction lt $bribeAmount)>> You'd better hope you have enough money for your Monday payment.\
-			<<set window.playerCode.incrementIncreaseMultiplier()>>\
+<!--	--><<set window.playerCode.incrementIncreaseMultiplier()>>\
 <<endif>>"@@ $teacher eyes you with disapproval.\
 <!----><<endif>>\
 \
