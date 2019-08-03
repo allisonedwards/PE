@@ -94,7 +94,7 @@
 		You close your eyes and imagine yourself being fucked by the fat cock of a sugar daddy. You imagine him calling you a whore as he vigorously pounds your ass with strong deep thrusts. In the haze of your fantasy, your arm moves almost against your will.
 		
 	<<endif>>\
-	<<if (not $flags.vibratorCaught) and ($player.perversion.guardian eq 3) and ($flags.difficulty == 3)>>\
+	<<if (not $flags.vibratorCaught) and ($player.perversion.guardian eq 3) and ($flags.difficulty > 2)>>\
 		<<set $flags.vibratorCaught to true>>\
 		You feel like you're about to explode and you whimper, but suddenly the door opens and $guardian enters your room, her eyes going wide at the scene. You forgot to lock the door, and someone forgot to knock!
 
