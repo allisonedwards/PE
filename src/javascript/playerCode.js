@@ -392,11 +392,10 @@ window.playerCode={
 			//      - increase multiplier with disobience; but it tails down
 			//      - never increase the base bribe value over 1200; as this
 			//        impossible to continually service
-			return Math.min(600 *State.active.variables.flags.bribeFactor ,
-						    Math.max( State.active.variables.bribeAmount + player.bribeIncrease, 
-									  Math.round( money * ( 4 -( 3 / player.bribeIncreaseMultiplier ) ))
-									)
-						   );
+			var mainBribe =State.active.variables.bribeAmount + player.bribeIncrease;
+			var walletBribe = Math.round( money *( 4 - ( 3 / State.active.variables.flags.bribeFactor )));
+			var idealBribe =  Math.max( mainBribe, walletBribe);
+			return Math.min(600 *State.active.variables.flags.bribeFactor , idealBribe)
 		} else {
 			return State.active.variables.bribeAmount;
 		}
