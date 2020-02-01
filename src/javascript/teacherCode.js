@@ -180,7 +180,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		10,
 		priority:	0,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [0, 4] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [0, 4] },
 		extraReq:	function () {
 					return true;
 				},
@@ -199,7 +199,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		1,
 		priority:	0,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [0, 10] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [0, 10] },
 		extraReq:	function () {
 					return true;
 				},
@@ -217,7 +217,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		10,
 		priority:	0,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
 		extraReq:	function () {
 					return State.active.variables.kinkAllow.footFetish;
 				},
@@ -235,7 +235,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		10,
 		priority:	0,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
 		extraReq:	function () {
 					return State.active.variables.kinkAllow.shoeBoot;
 				},
@@ -253,7 +253,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		10,
 		priority:	0,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [2, 6] },
 		extraReq:	function () {
 					return true;
 				},
@@ -272,7 +272,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		20,
 		priority:	0,
-		baseReq:	{ teacher: [10, 10], guardian: [0, 10], therapist: [0, 10], penalties: [7, 10] },
+		baseReq:	{ teacher: [10, 11], guardian: [0, 10], therapist: [0, 10], penalties: [7, 10] },
 		extraReq:	function () {
 					return true;
 				},
@@ -329,7 +329,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	5,
-		baseReq:	{ teacher: [0, 10], guardian: [0, 10], therapist: [0, 10], penalties: [0, 10] },
+		baseReq:	{ teacher: [0, 11], guardian: [0, 10], therapist: [0, 10], penalties: [0, 10] },
 		extraReq:	function () {
 					return State.active.variables.kinkAllow.penisShrink && (!(State.active.variables.body.penisShrink == 1));
 				},
@@ -457,7 +457,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [5, 10], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
+		baseReq:	{ teacher: [5, 11], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
 		extraReq:	function () {
 					return (State.active.variables.body.ass <= 1) && (!State.active.variables.flags.teacherNoticeAssEnhancingXL);
 				},
@@ -475,7 +475,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [5, 10], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
+		baseReq:	{ teacher: [5, 11], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
 		extraReq:	function () {
 					return (State.active.variables.body.lips <= 1) && (!State.active.variables.flags.teacherNoticeLipsEnhancingXL);
 				},
@@ -530,7 +530,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [5, 10] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [5, 10] },
 		extraReq:	function () {
 					return (State.active.variables.body.makeup <= 3) && (!State.active.variables.flags.teacherNoticeHeavyMakeup) && (State.active.variables.body.semiMakeup <= 3);
 				},
@@ -548,7 +548,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	2,
-		baseReq:	{ teacher: [8, 10], guardian: [0, 10], therapist: [0, 10], penalties: [7, 10] },
+		baseReq:	{ teacher: [8, 11], guardian: [0, 10], therapist: [0, 10], penalties: [7, 10] },
 		extraReq:	function () {
 					return State.active.variables.kinkAllow.tattoo && (State.active.variables.body.permMakeup <= 3);
 				},
@@ -585,7 +585,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
 		extraReq:	function () {
 					return (!(State.active.variables.body.manicure == 2)) && (!State.active.variables.flags.teacherNoticeManicurePerm);
 				},
@@ -658,7 +658,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
 		extraReq:	function () {
 					return (!(State.active.variables.body.boobs == 4)) && (!State.active.variables.flags.teacherNoticeBreastsDD);
 				},
@@ -786,7 +786,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.tattooStupidWhore)) && State.active.variables.kinkAllow.tattoo;
 				},
@@ -804,7 +804,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.tattooSlut)) && State.active.variables.kinkAllow.tattoo;
 				},
@@ -822,7 +822,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.tattooSissy)) && State.active.variables.kinkAllow.tattoo;
 				},
@@ -840,7 +840,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 9] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.tattooHeart)) && State.active.variables.kinkAllow.tattoo;
 				},
@@ -859,7 +859,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [5, 10], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
+		baseReq:	{ teacher: [5, 11], guardian: [0, 10], therapist: [0, 10], penalties: [4, 8] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.PiercingTongue)) && State.active.variables.kinkAllow.piercing;
 				},
@@ -877,7 +877,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [5, 10], guardian: [0, 10], therapist: [0, 10], penalties: [2, 8] },
+		baseReq:	{ teacher: [5, 11], guardian: [0, 10], therapist: [0, 10], penalties: [2, 8] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.PiercingNipples)) && State.active.variables.kinkAllow.piercing;
 				},
@@ -895,7 +895,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [2, 8] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [2, 8] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.PiercingLips)) && State.active.variables.kinkAllow.piercing;
 				},
@@ -913,7 +913,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.PiercingBelly)) && State.active.variables.kinkAllow.piercing;
 				},
@@ -931,7 +931,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [6, 10], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
+		baseReq:	{ teacher: [6, 11], guardian: [0, 10], therapist: [0, 10], penalties: [3, 8] },
 		extraReq:	function () {
 					return (!playerCode.owns(itemsC.PiercingNose)) && State.active.variables.kinkAllow.piercing;
 				},
@@ -986,7 +986,7 @@ window.teacherPunishments = {
 		onlyOnce:	false,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [8, 10], guardian: [0, 10], therapist: [0, 10], penalties: [4, 9] },
+		baseReq:	{ teacher: [8, 11], guardian: [0, 10], therapist: [0, 10], penalties: [4, 9] },
 		extraReq:	function () {
 					return true;
 				},
@@ -1004,7 +1004,7 @@ window.teacherPunishments = {
 		onlyOnce:	true,
 		chance:		10,
 		priority:	1,
-		baseReq:	{ teacher: [10, 10], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
+		baseReq:	{ teacher: [10, 11], guardian: [0, 10], therapist: [0, 10], penalties: [6, 10] },
 		extraReq:	function () {
 					return (State.active.variables.body.permAnal <= 2) && (State.active.variables.body.anal >= 3);
 				},
