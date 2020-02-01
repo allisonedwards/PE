@@ -3,6 +3,7 @@ window.rewardMoney={
 	teacherFemaleClothing: 15,
 	teacherButtplug: 5,
 	teacherChastity: 10,
+	teacherBra: 10,
 	teacherAssistant: 15,
 	teacherBullySex: 20,
 	teacherPiss: 60,
@@ -884,7 +885,8 @@ window.playerAddonsList={
 		vibratorFirst: 0, /* "guardian", "photoGirl", "coach", "badBoyfriend" */
 		analFirst: 0, /* "guardian", "photoGirl", "coach", "badBoyfriend" */
 		analSkill: 0,
-		schoolSlut: 0
+		schoolSlut: 0,
+		penisFirst: 0, /* "slave girls", "guardian", "femFriend", "cheerCaptain", "cheerBitch", "photoGirl" */
 	},
 	masturbate: {
 		lastDay: 0,
@@ -913,7 +915,8 @@ window.playerAddonsList={
 		vibratorFirst: 0, /* "guardian", "therapist", "shop" */
 		vibratorExp: 0,
 		analFirst: 0, /* "guardian", "photoGirl", "coach", "badBoyfriend" */
-		analExp: 0
+		analExp: 0,
+		penisFirst: 0,
 	},
 },
 
@@ -934,6 +937,12 @@ window.friendList={
 	admitWhatsWrong: 0,
 	admitLikingTrap: 0,
 	leave_message: '',	/* Printed in end of Hang Out or early in Leav friend's house */
+	
+	visit: {
+        r2: 0,
+        c3: 0,
+    },
+    seenPanties: [],
 },
 
 window.futaList={
@@ -1271,7 +1280,7 @@ window.flagsList={
 	clothesPurged:false, //new flag
 	delaySlut: 0,
 	canGame: true,
-	difficulty: 1,
+	difficulty: 2,
 	choreFactor: 1,
 	bribeFactor: 1,
 	metClothesClerk: false,
@@ -1285,6 +1294,13 @@ window.flagsList={
 	volleyFirst: true, //first time visiting the volleyball team
 	firstTimeTAAnime: true, //first time meeting the TA in the anime club
 	failedPrincipal: false, //did not work for principal in teacher task
+	endSchoolSlut: 0,
+	nancyChastTalk: false,
+	slutGoodEnd: 0,
+	slutBadEnd: 0,
+	teacherSawPanties: false,
+	friendBraTask: false,
+	ashleyTrained: false,
 },
 
 window.kinkList={
@@ -1554,5 +1570,7 @@ window.cheerFriendList={
 		acceptInvite: false,	//accepting cheer friend's request to meet, [bool]
 		boy: 1,		//type of boy PC suggests cheer friend likes [int],[1 = jock, 2 = bad boy, 3 = nerd]
 		force: false,	//took diary by force
+		visitedHouse: false, //visited house in SE 5
+		genderPref: "", //stated preferred gender
 	}
 }

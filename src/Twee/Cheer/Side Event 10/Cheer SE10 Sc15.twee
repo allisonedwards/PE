@@ -18,7 +18,7 @@ $teacher doesn’t say anything, but the action itself is enough for you to fina
 <<if $kinkAllow.diapering>>\
 	@@.teacher;“We should get you out of that diaper,”@@ $teacher says as she places her hand over your crotch, causing your dick to twitch from the contact.
 
-	<<if $kinkAllow.wetting>>\
+	<<if $kinkAllow.wetting && ($cheerleaders.game.finalScore < 6 || $cheerleaders.flags.prankbeg)>>\
 		@@.teacher;“Seems you managed to use it, too.”@@ She looks at you. @@.teacher;“Just urine?”@@
 
 		You blush as you nod.
@@ -37,7 +37,9 @@ $teacher doesn’t say anything, but the action itself is enough for you to fina
 
 		$teacher folds up the swollen diaper and stuffs it into the plastic bag for disposal later.
 	<<else>>\
-		@@.teacher;“At least you managed to keep it dry.”@@ In a swift motion, she rips off the tapes and pulls the diaper from under you. The cool air on your exposed skin reminds you of your lack of panties.
+		@@.teacher;“At least you managed to keep it dry.”@@ 
+		
+		In a swift motion, she rips off the tapes and pulls the diaper from under you. The cool air on your exposed skin reminds you of your lack of panties.
 	<<endif>>\
 	
 <<endif>>\
@@ -71,7 +73,7 @@ You desperately shake your head, unwilling to be split from $cheerFriend.name an
 
 @@.teacher;“If that is your decision, then I will allow you to continue, for now.
 
-“However, $player.name, I expect you to do your utmost to resolve your conflict with Ashley. I simply will not have whatever dispute there is between you two to snowball into an administration concern.”@@
+“However, $player.name, I expect you to do your utmost to resolve your conflict with Ashley. I simply will not have whatever dispute there is between you two snowball into an administration concern.”@@
 
 @@.heroT;“I… I don’t know if I can,”@@ you mutter. @@.heroT;“She’s just… she’s such a bitch.”@@
 
