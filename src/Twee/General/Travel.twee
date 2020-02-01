@@ -56,7 +56,7 @@
 					<<set _quickDressForSchool = true>>\
 				<<endif>>\
 			<<endif>>\
-			<<if $player.perversion.teacher >= 4 and $cheerleaders.progress == -1 and window.timeCode.isThursday()>>\
+			<<if $player.perversion.teacher >= 4 and $player.perversion.teacher < 10 and $cheerleaders.progress == -1 and window.timeCode.isThursday()>>\
 				<<set _destination = "Cheer Ep0 Sc1">>\
 			<<endif>>\
 			<<if $cheerleaders.progress == 2 and window.timeCode.isMonday() and (not $cheerleaders.flags.skippedPractice)>>\
@@ -118,6 +118,22 @@
 			<<endif>>\
 			<<set _description = "Visit ">>\
 			<<set _description += $friend>>\
+		<<endif>>\
+		<<if (_to.id eq locationsJS.cheerFriendHouse.id)>>\
+			<<if (not window.timeCode.canVisitCheerFriend())>>\
+				<<continue>>\
+			<<elseif (not window.clothes.dressedFemale())>>\
+				<<set _available = false>>\
+				<<set _reason = "You must be dressed like a girl to visit ">>\
+				<<set _reason += $cheerFriend.name>>\
+			<<elseif (not window.clothes.dressedCheerFriend())>>\
+				<<set _available = false>>\
+				<<set _reason = "You must be wearing something other than your school or cheerleader uniform to visit ">>\
+				<<set _reason += $cheerFriend.name>>\
+			<<endif>>\
+			<<set _description = "Visit ">>\
+			<<set _description += $cheerFriend.name>>\
+			<<set _description += "'s house">>\
 		<<endif>>\
 		<<if (_to.id eq locationsJS.therapist.id)>>\
 			<<if (not window.timeCode.needTherapy())>>\

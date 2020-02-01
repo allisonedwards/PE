@@ -231,6 +231,9 @@ window.playerCode={
 	haveCplus: function() {
 		return (State.active.variables.body.boobs > 2);
 	},
+	haveDplus: function() {
+		return(State.active.variables.body.boobs > 3);
+	},
 	haveLips: function() {
 		return (State.active.variables.body.lips > 0);
 	},
@@ -326,7 +329,7 @@ window.playerCode={
 	heelsCheck: function() {
 		var s=this.isWearingOn(window.itemTypes.Shoes);
 		var player=State.active.variables.player;
-		if (s) {
+		if (s && s.heels) {
 			if (s.daringRec > 6) {
 				if ((window.randomCode.getIntInclusive(0, 10) >= player.heelsSkill) && (window.randomCode.getIntInclusive(0, 2) == 0)) {
 					player.heelsSkill++;
@@ -338,7 +341,7 @@ window.playerCode={
 				}
 				return false;
 			}
-			if (s.daringRec > 3) {
+			if (s.daringRec > 4) {
 				if ((window.randomCode.getIntInclusive(0, 5) >= player.heelsSkill) && (window.randomCode.getIntInclusive(0, 2) == 0)) {
 					player.heelsSkill++;
 					State.active.variables.flags.heelsFall=true;
@@ -389,7 +392,7 @@ window.playerCode={
 			//      - increase multiplier with disobience; but it tails down
 			//      - never increase the base bribe value over 1200; as this
 			//        impossible to continually service
-			return Math.min(1200 , 
+			return Math.min(600 *State.active.variables.flags.bribeFactor ,
 						    Math.max( State.active.variables.bribeAmount + player.bribeIncrease, 
 									  Math.round( money * ( 4 -( 3 / player.bribeIncreaseMultiplier ) ))
 									)
@@ -401,22 +404,21 @@ window.playerCode={
 	calculateBribeIncrease: function() {
 		var player=State.active.variables.player;
 		
-		if (player.perversion.teacher < 3) { player.bribeIncrease = 10; }
-		else if (player.perversion.teacher < 5) { player.bribeIncrease = 15;}
-		else if ((player.perversion.teacher == 5) && (player.perversion.teacherCooldown < 2)) { player.bribeIncrease = 0; }
-		else if (player.perversion.teacher < 7) { player.bribeIncrease = 20;  }
-		else {
-			player.bribeIncrease = 30;
-		}
+		if (player.perversion.teacher < 3) { player.bribeIncrease = 10*State.active.variables.flags.bribeFactor; return; }
+		if (player.perversion.teacher < 5) { player.bribeIncrease = Math.floor(15*State.active.variables.flags.bribeFactor); return; }
+		if ((player.perversion.teacher == 5) && (player.perversion.teacherCooldown < 2)) { player.bribeIncrease = 0; return; }
+		if (player.perversion.teacher < 7) { player.bribeIncrease = 20*State.active.variables.flags.bribeFactor; return; }
+		
+		player.bribeIncrease = 30*State.active.variables.flags.bribeFactor;
 		player.bribeIncrease = player.bribeIncrease * player.bribeIncreaseMultiplier;
 	},
 	resetIncreaseMultiplier: function() {
-		var player=State.active.variables.player;
-		player.bribeIncreaseMultiplier = 1;
+		var flags = State.active.variables.flags;
+		flags.bribeFactor = flags.difficulty /2  ; // It would be good have a single-source-of-truth-of this mapping.
 	},
 	incrementIncreaseMultiplier: function() {
-		var player=State.active.variables.player;
-		player.bribeIncreaseMultiplier += 1;
+		var flags = State.active.variables.flags;
+		flags.bribeFactor += 1 ;
 	},
 	owns: function(item) {
 		return State.active.variables.inventory.indexOf(item.id) >= 0;
@@ -614,7 +616,7 @@ window.playerCode={
 		var itemsC=window.itemsC;
 		for (var i=0; i < Object.keys(itemsC).length; i++) {
 			var o=itemsC[Object.keys(itemsC)[i]];
-			if (o.clothingType != itemTypes.NotClothing && playerCode.owns(o) && !o.female) {
+			if ((o.clothingType != itemTypes.NotClothing && o.clothingType != itemTypes.Extra) && playerCode.owns(o) && !o.female) {
 				State.active.variables.inventory.splice(State.active.variables.inventory.indexOf(o.id), 1);
 			}
 		}

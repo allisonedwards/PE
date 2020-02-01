@@ -10,7 +10,7 @@
 	
 	@@.guardian;"Oh, you poor baby. Think I'm being too tough on you? You think I'm making you work too hard?"@@ 
 
-	She narrows her eyes. @@.guardian;"Fine. You know what, I could let it go - I'd even pay you for your sloppy work - but I will //teach you a lesson// instead, one a little brat like you deserves. So, what do you say? Would you rather work hard, or do you prefer a little punishment?"@@
+	She narrows her eyes. @@.guardian;"Fine. You know what, <<if $flags.difficulty <3>>I could let it go - I'd even pay you for your sloppy work - but <<endif>>I will //teach you a lesson// instead, one a little brat like you deserves. So, what do you say? Would you rather work hard, or do you prefer a little punishment?"@@
 	
 	$Guardian stares at you and you gulp, trying to figure out what she meant by a 'little' punishment.
 	
@@ -139,12 +139,12 @@
 			<<if $player.perversion.guardian eq 3>>\
 				<<if _b>>Her eyes widen when she sees your butt-plug, and she<<else>>She<<endif>> gasps a little<<if _c>> when your dangling chastity cage brushes her tights a moment later<<endif>>.
 				
-				@@.guardian;"Oh, my god, $player.name, <<if _b>>what are these?<<else>>What is this?<<endif>>@@
+				@@.guardian;"Oh, my god, $player.name, <<if _b>>what are these?<<else>>What is this?<<endif>>"@@
 				
 				<<if _c>>\
 					<<if (not $flags.guardianNoticeChastity)>>\
 						<<set $flags.guardianNoticeChastity = true>>\
-						@@.guardian;I had no idea you were into this kind of thing."@@ 
+						@@.guardian;"I had no idea you were into this kind of thing."@@ 
 						
 						Her tone of voice is hard to gauge. With your head hung low, you wait in dread for her response.
 						
@@ -161,17 +161,18 @@
 				<<else>>\
 					You begin to notice her abdomen pushing rhythmically against your side as her breathing grows heavier.
 					
-					@@.guardian;I wasn't expecting your butt to be... occupied like this."@@
+					@@.guardian;"I wasn't expecting your butt to be... occupied like this."@@
 				<<endif>>\
 			<<else>>\
 				She <<if _b>>discovers your butt-plug and <<endif>>smirks<<if _c>> as your dangling chastity cage brushes her tights a moment later<<endif>>.
 				
-				@@.guardian;"My my, $player.name.@@\
+				@@.guardian;"My my, $player.name.\
 				<<if _c>>\
-					@@.guardian;It is rather fitting, isn't it?"@@
+					It is rather fitting, isn't it?
 				<<else>>\
-					@@.guardian;I wasn't expecting your butt to be... occupied like this."@@
+					I wasn't expecting your butt to be... occupied like this.
 				<<endif>>\
+				"@@
 			<<endif>>\
 			<<if _b>>\
 				She experimentally tugs the base of your butt-plug, sending a tingle from your anal ring through your groin, but she doesn't pull it out. Instead, you feel her slightly bated breath warming your cheek as she leans in to your ear.
@@ -532,8 +533,10 @@
 			<<if _pay>>\
 				<<set _choreV.dayPerformed = $time.day>>\
 				<<set _choreV.fail = false>>\
-				<<set _rw += _choreJS.reward>>\
-				<<set $player.money += _choreJS.reward>>\
+				<<if $flags.difficulty < 3>>\
+					<<set _rw += Math.ceil(_choreJS.reward*$flags.choreFactor)>>\
+					<<set $player.money += Math.ceil(_choreJS.reward*$flags.choreFactor)>>\
+				<<endif>>\
 			<<endif>>\
 			<<if _choreJS.extra>>\
 				<<set _pay = false>>\
@@ -542,7 +545,7 @@
 			<<set _pay = true>>\
 		<<endif>>\
 	<</for>>\
-	<<if $flags.choreLazy and (window.choresFunc.choresPercentCalc() gte 70)>>\
+	<<if $flags.choreLazy and (window.choresFunc.choresPercentCalc() gte 70) and ($flags.difficulty < 3)>>\
 		<<set $flags.choreLazy = false>>\
 	<<endif>>\
 	<<if _rw gt 0>>\
@@ -571,7 +574,7 @@
 
 	@@.guardian;"You sure?"@@ She quirks her eyebrow. @@.guardian;"I won't go easy on you, and I won't let you back out of it."@@
 	
-	[[Yes you're sure|Special punishments][$scene="spank harsher yes";$flags.spankHarshly=true]]
+	[[Yes you’re sure|Special punishments][$scene="spank harsher yes";$flags.spankHarshly=true]]
 	[[No, not really|Special punishments][$scene="spank harsher no"]]
 <<elseif $scene eq "spank harsher yes">>\
 	@@.guardian;"Hmm, I wasn't expecting you to ask for this, but I will try my best."@@

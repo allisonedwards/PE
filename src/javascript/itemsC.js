@@ -267,7 +267,7 @@ window.itemsC={
 		school: true,
 		cheer: true,
 		stolen: false,
-		skirt: false,
+		shorts: true,
 		store: 4,
 		cost: 0,
 		image: "rookie_uniform.jpg"
@@ -288,7 +288,6 @@ window.itemsC={
 		school: true,
 		cheer: true,
 		stolen: false,
-		skirt: true,
 		store: 4,
 		cost: 0,
 		image: "cheer_dress.jpg"
@@ -1100,7 +1099,7 @@ window.itemsC={
 		store: 6,
 		stolen: false,
 		surgery: false,
-		daringRec: 0,
+		daringRec: 7,
 		disabled: true,
 		cost: 0,
 		image: "heeled_cheer_sneakers.jpg"
@@ -1382,7 +1381,7 @@ window.itemsC={
 		daringRec: 0,
 		stolen: false,
 		image: "spy_camera.jpg",
-		cost: 80
+		cost: 30
 	},
 	camera: {
 		id: "camera",

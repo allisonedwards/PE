@@ -2,7 +2,7 @@
 \
 You strut toward the toilets, shaking your hips and licking your lips at anyone who looks your way.
 
-<<if $kink.urineDrink and ($tasksTeacher.schoolPublicToilet.progress eq 1)>>\
+<<if $kinkAllow.urineDrink and ($tasksTeacher.schoolPublicToilet.progress eq 1)>>\
 	<<set $tasksTeacher.schoolPublicToilet.progress = 2>>\
 	You make your way to the bathroom, only to find that someone has been busy. They installed a complicated rig in one of the toilet stalls. There's a big, heavy dildo, a hanging ring gag, and a thick metal collar attached to some metal cuffs. All of it is linked by chains to the walls.
 	
@@ -37,6 +37,9 @@ You strut toward the toilets, shaking your hips and licking your lips at anyone 
 <<endif>>\
 <<if ($tasksTeacher.schoolPublicToilet.progress eq 0)>>\
 	<<set $tasksTeacher.schoolPublicToilet.progress = 1>>\
+<<endif>>\
+<<if $player.perversion.teacher == 10>>\
+	<<set $flags.slutWork = true>>\
 <<endif>>\
 
 [[Go to class]]
